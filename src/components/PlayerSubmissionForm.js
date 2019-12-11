@@ -55,9 +55,7 @@ class PlayerSubmissionForm extends Component {
     return (
       <div className="PlayerSubmissionForm" onSubmit={this.onFormSubmit}>
         <h3>Player Submission Form for Player #{ this.props.playerNum }</h3>
-
         <form className="PlayerSubmissionForm__form" >
-
           <div className="PlayerSubmissionForm__poem-inputs">
 
             <span>The</span>
