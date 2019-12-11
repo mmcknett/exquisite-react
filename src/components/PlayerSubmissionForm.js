@@ -17,41 +17,13 @@ class PlayerSubmissionForm extends Component {
     };
   }
 
-  onAdjectiveChange = (event) => {
-    this.setState({
-      adj1: event.target.value,
-    });
-  }
+  onFieldChange = (event) => {
+    const { name, value } = event.target;
 
-  onNounChange = (event) => {
-    this.setState({
-      noun1: event.target.value,
-    });
-  }
+    const updatedState = {};
+    updatedState[name] = value;
 
-  onAdverbChange = (event) => {
-    this.setState({
-      adverb: event.target.value,
-    });
-  }
-
-
-  onVerbChange = (event) => {
-    this.setState({
-      verb: event.target.value,
-    });
-  }
-
-  onAdjective2Change = (event) => {
-    this.setState({
-      adj2: event.target.value,
-    });
-  }
-
-  onNoun2Change = (event) => {
-    this.setState({
-      noun2: event.target.value,
-    });
+    this.setState(updatedState);
   }
 
   onFormSubmit = (event) => {
@@ -87,52 +59,50 @@ class PlayerSubmissionForm extends Component {
         <form className="PlayerSubmissionForm__form" >
 
           <div className="PlayerSubmissionForm__poem-inputs">
-            {
-              // Put your form inputs here... We've put in one below as an example
-            }
+
             <span>The</span>
 
             <input
-              onChange={this.onAdjectiveChange}
+              onChange={this.onFieldChange}
+              name="adj1"
               value={this.state.adj1}
-              adj1="adj1"
               placeholder="adjective"
               type="text" />
             
             <input
-              onChange={this.onNounChange}
+              onChange={this.onFieldChange}
+              name="noun1"
               value={this.state.noun1}
-              noun="noun"
               placeholder="noun"
               type="text" />
 
             <input
-              onChange={this.onAdverbChange}
+              onChange={this.onFieldChange}
+              name="adverb"
               value={this.state.adverb}
-              adverb="adverb"
               placeholder="adverb"
               type="text" />
             
             <input
-              onChange={this.onVerbChange}
+              onChange={this.onFieldChange}
+              name="verb"
               value={this.state.verb}
-              verb="verb"
               placeholder="verb"
               type="text" />
 
             <span>the</span>
 
             <input
-              onChange={this.onAdjective2Change}
+              onChange={this.onFieldChange}
+              name="adj2"
               value={this.state.adj2}
-              adj2="adj2"
               placeholder="adjective"
               type="text" />
 
             <input
-              onChange={this.onNoun2Change}
+              onChange={this.onFieldChange}
+              name="noun2"
               value={this.state.noun2}
-              noun2="noun2"
               placeholder="noun"
               type="text" />
 
