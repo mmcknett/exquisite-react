@@ -32,7 +32,6 @@ class Game extends Component {
     console.log(this.state.isSubmitted)
   }
 
-
   render() {
 
     const exampleFormat = FIELDS.map((field) => {
@@ -63,8 +62,8 @@ class Game extends Component {
 
         <PlayerSubmissionForm playerNum={this.state.playerNum} addLineCallback={this.addLine}/>
 
-        <FinalPoem submitPoem={this.submitPoem} lines={this.state.lineList}/>
-
+        <FinalPoem submitPoem={this.submitPoem} lines={this.state.lineList} submitted={this.state.isSubmitted} />
+        
       </div>
     );
   }

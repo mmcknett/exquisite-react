@@ -17,16 +17,19 @@ const FinalPoem = (props) => {
     );
   });
 
+  const submitted = props.submitted
+
   return (
     <div className="FinalPoem">
+      { submitted ? 
       <section className="FinalPoem__poem">
         <h3>Final Poem</h3>
         { lineCollection }
-      </section>
-
+      </section> : 
       <div className="FinalPoem__reveal-btn-container">
         <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" onClick={ onsubmitPoem }/>
       </div>
+      }
     </div>
   );
 }
@@ -34,6 +37,7 @@ const FinalPoem = (props) => {
 FinalPoem.propTypes = {
   lines: PropTypes.array,
   submitPoem: PropTypes.func.isRequired,
+  submitted: PropTypes.bool.isRequired,
 };
 
 export default FinalPoem;
