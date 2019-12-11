@@ -22,8 +22,6 @@ class Game extends Component {
     lines.lineList.push(sentence)
 
     this.setState({lines})
-
-    // console.log(this.state.lineList)
   }
 
   render() {
