@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from "prop-types";
 import './FinalPoem.css';
 
-const FinalPoem = (props) => {
-  const lines = props.lines
+const FinalPoem = ({ lines, submitPoem, submitted }) => {
 
   const onsubmitPoem = () => {
-    props.submitPoem()
+    submitPoem()
   }
 
   const lineCollection = lines.map((line, i) => {  
@@ -16,8 +15,6 @@ const FinalPoem = (props) => {
       </p>
     );
   });
-
-  const submitted = props.submitted
 
   return (
     <div className="FinalPoem">
