@@ -15,6 +15,20 @@ class PlayerSubmissionForm extends Component {
       adj2: "",
       noun2: "",
     };
+
+    this.validator = {
+      text: /.+/,
+    };
+  }
+
+  validate = (fieldName) => {
+    const value = this.state[fieldName];
+    const validation = this.validator.text;
+
+    if (value.match(validation)) {
+      return true;
+    }
+    return false;
   }
 
   onFieldChange = (event) => {
@@ -28,7 +42,19 @@ class PlayerSubmissionForm extends Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-  
+
+    let allValid = true;
+
+    Object.keys(this.state).forEach((key) => {
+      if (!this.state[key].match(this.validator.text)) {
+        allValid = false;
+      }
+    });
+
+    if (!allValid) {
+      return;
+    }
+
     const newLine = {
       adj1: this.state.adj1,
       noun1: this.state.noun1,
@@ -51,6 +77,7 @@ class PlayerSubmissionForm extends Component {
   }
 
   render() {
+    const adj1Valid = this.validate("adj1")
 
     return (
       <div className="PlayerSubmissionForm" onSubmit={this.onFormSubmit}>
@@ -65,7 +92,9 @@ class PlayerSubmissionForm extends Component {
               name="adj1"
               value={this.state.adj1}
               placeholder="adjective"
-              type="text" />
+              type="text" 
+              className={adj1Valid ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
+              />
             
             <input
               onChange={this.onFieldChange}
