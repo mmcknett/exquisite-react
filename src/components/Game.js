@@ -8,6 +8,24 @@ class Game extends Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      lineList: [],
+      recentLine: undefined,
+    };
+  }
+
+  addLine = (line) => {
+    let sentence = `The ${line.adjective} ${line.noun} ${line.adverb} ${line.verb} the ${line.adjective2} ${line.noun2}.`
+
+    const lines = this.state
+
+    lines.lineList.push(sentence)
+
+    this.setState({lines})
+
+    console.log(this.state.lineList)
+
   }
 
   render() {
@@ -34,7 +52,7 @@ class Game extends Component {
 
         <RecentSubmission />
 
-        <PlayerSubmissionForm />
+        <PlayerSubmissionForm addLineCallback={this.addLine}/>
 
         <FinalPoem />
 
