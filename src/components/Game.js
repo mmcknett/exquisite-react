@@ -60,7 +60,10 @@ class Game extends Component {
 
         { this.state.playerNum > 1 ? <RecentSubmission lastPlayer={lastLine[index]} /> : ""}
 
-        <PlayerSubmissionForm playerNum={this.state.playerNum} addLineCallback={this.addLine}/>
+        { this.state.isSubmitted ? 
+        "" : <PlayerSubmissionForm playerNum={this.state.playerNum} addLineCallback={this.addLine}/>
+        }
+        
 
         <FinalPoem submitPoem={this.submitPoem} lines={this.state.lineList} submitted={this.state.isSubmitted} />
         
