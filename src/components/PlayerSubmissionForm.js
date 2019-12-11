@@ -82,7 +82,7 @@ class PlayerSubmissionForm extends Component {
 
     return (
       <div className="PlayerSubmissionForm" onSubmit={this.onFormSubmit}>
-        <h3>Player Submission Form for Player #{  }</h3>
+        <h3>Player Submission Form for Player #{ this.props.playerNum }</h3>
 
         <form className="PlayerSubmissionForm__form" >
 
@@ -150,6 +150,7 @@ class PlayerSubmissionForm extends Component {
 }
 
 PlayerSubmissionForm.propTypes = {
+  playerNum: PropTypes.number.isRequired,
   addLineCallback: PropTypes.func.isRequired,
 };
 

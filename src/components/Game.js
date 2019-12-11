@@ -10,8 +10,7 @@ class Game extends Component {
     super(props);
 
     this.state = {
-      lineList: [],
-      recentLine: undefined,
+      lineList: []
     };
   }
 
@@ -51,7 +50,7 @@ class Game extends Component {
 
         <RecentSubmission />
 
-        <PlayerSubmissionForm addLineCallback={this.addLine}/>
+        <PlayerSubmissionForm playerNum={this.state.lineList.length + 1} addLineCallback={this.addLine}/>
 
         <FinalPoem />
 
