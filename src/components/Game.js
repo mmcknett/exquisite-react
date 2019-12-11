@@ -14,8 +14,8 @@ class Game extends Component {
     };
   }
 
-  addLine = ({adjective, noun, adverb, verb, adjective2, noun2}) => {
-    let sentence = `The ${adjective} ${noun} ${adverb} ${verb} the ${adjective2} ${noun2}.`
+  addLine = ({adj1, noun1, adverb, verb, adj2, noun2}) => {
+    let sentence = `The ${adj1} ${noun1} ${adverb} ${verb} the ${adj2} ${noun2}.`
 
     const lines = this.state
 
@@ -23,7 +23,7 @@ class Game extends Component {
 
     this.setState({lines})
 
-    console.log(this.state.lineList)
+    // console.log(this.state.lineList)
   }
 
   render() {
@@ -52,7 +52,7 @@ class Game extends Component {
 
         <PlayerSubmissionForm playerNum={this.state.lineList.length + 1} addLineCallback={this.addLine}/>
 
-        <FinalPoem />
+        <FinalPoem lines={this.state.lineList}/>
 
       </div>
     );

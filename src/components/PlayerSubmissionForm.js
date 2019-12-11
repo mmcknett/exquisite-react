@@ -8,24 +8,24 @@ class PlayerSubmissionForm extends Component {
     super(props);
 
     this.state = {
-      adjective: "",
-      noun: "",
+      adj1: "",
+      noun1: "",
       adverb: "",
       verb: "",
-      adjective2: "",
+      adj2: "",
       noun2: "",
     };
   }
 
   onAdjectiveChange = (event) => {
     this.setState({
-      adjective: event.target.value,
+      adj1: event.target.value,
     });
   }
 
   onNounChange = (event) => {
     this.setState({
-      noun: event.target.value,
+      noun1: event.target.value,
     });
   }
 
@@ -44,7 +44,7 @@ class PlayerSubmissionForm extends Component {
 
   onAdjective2Change = (event) => {
     this.setState({
-      adjective2: event.target.value,
+      adj2: event.target.value,
     });
   }
 
@@ -58,20 +58,20 @@ class PlayerSubmissionForm extends Component {
     event.preventDefault();
   
     const newLine = {
-      adjective: this.state.adjective,
-      noun: this.state.noun,
+      adj1: this.state.adj1,
+      noun1: this.state.noun1,
       adverb: this.state.adverb,
       verb: this.state.verb,
-      adjective2: this.state.adjective2,
+      adj2: this.state.adj2,
       noun2: this.state.noun2
     };
 
     this.setState({
-      adjective: "",
-      noun: "",
+      adj1: "",
+      noun1: "",
       adverb: "",
       verb: "",
-      adjective2: "",
+      adj2: "",
       noun2: "",
     });
 
@@ -94,14 +94,14 @@ class PlayerSubmissionForm extends Component {
 
             <input
               onChange={this.onAdjectiveChange}
-              value={this.state.adjective}
-              adjective="adjective"
+              value={this.state.adj1}
+              adj1="adj1"
               placeholder="adjective"
               type="text" />
             
             <input
               onChange={this.onNounChange}
-              value={this.state.noun}
+              value={this.state.noun1}
               noun="noun"
               placeholder="noun"
               type="text" />
@@ -124,8 +124,8 @@ class PlayerSubmissionForm extends Component {
 
             <input
               onChange={this.onAdjective2Change}
-              value={this.state.adjective2}
-              adjective2="adjective2"
+              value={this.state.adj2}
+              adj2="adj2"
               placeholder="adjective"
               type="text" />
 
