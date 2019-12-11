@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from "prop-types";
 import './FinalPoem.css';
 
-const FinalPoem = ({ lines, submitPoem, submitted }) => {
+const FinalPoem = ({ lines, submitPoemCallback, submitted }) => {
 
   const onsubmitPoem = () => {
-    submitPoem()
+    submitPoemCallback()
   }
 
   const lineCollection = lines.map((line, i) => {  
@@ -33,7 +33,7 @@ const FinalPoem = ({ lines, submitPoem, submitted }) => {
 
 FinalPoem.propTypes = {
   lines: PropTypes.array,
-  submitPoem: PropTypes.func.isRequired,
+  submitPoemCallback: PropTypes.func.isRequired,
   submitted: PropTypes.bool.isRequired,
 };
 

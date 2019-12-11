@@ -5,7 +5,6 @@ import FinalPoem from './FinalPoem';
 import RecentSubmission from './RecentSubmission';
 
 class Game extends Component {
-
   constructor(props) {
     super(props);
 
@@ -16,7 +15,7 @@ class Game extends Component {
     };
   }
 
-  addLine = ({adj1, noun1, adverb, verb, adj2, noun2}) => {
+  addLine = ({ adj1, noun1, adverb, verb, adj2, noun2 }) => {
     let sentence = `The ${adj1} ${noun1} ${adverb} ${verb} the ${adj2} ${noun2} .`
 
     const game = this.state
@@ -27,13 +26,11 @@ class Game extends Component {
     this.setState({game})
   }
 
-  submitPoem = () => {
-    this.setState({isSubmitted: true})
-    console.log(this.state.isSubmitted)
+  submitPoemCallback = () => {
+    this.setState({ isSubmitted: true })
   }
 
   render() {
-
     const exampleFormat = FIELDS.map((field) => {
       if (field.key) {
         return field.placeholder;
@@ -60,12 +57,9 @@ class Game extends Component {
 
         { this.state.playerNum > 1  && !this.state.isSubmitted ? <RecentSubmission lastPlayer={lastLine[index]} /> : ""}
 
-        { this.state.isSubmitted ? 
-        "" : <PlayerSubmissionForm playerNum={this.state.playerNum} addLineCallback={this.addLine}/>
-        }
+        { this.state.isSubmitted ? "" : <PlayerSubmissionForm playerNum={this.state.playerNum} addLineCallback={this.addLine}/>}
         
-        <FinalPoem lines={this.state.lineList} submitPoem={this.submitPoem} submitted={this.state.isSubmitted} />
-        
+        <FinalPoem lines={this.state.lineList} submitPoemCallback={this.submitPoemCallback} submitted={this.state.isSubmitted} />
       </div>
     );
   }
