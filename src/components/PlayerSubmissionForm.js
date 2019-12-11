@@ -77,8 +77,6 @@ class PlayerSubmissionForm extends Component {
   }
 
   render() {
-    const adj1Valid = this.validate("adj1")
-
     return (
       <div className="PlayerSubmissionForm" onSubmit={this.onFormSubmit}>
         <h3>Player Submission Form for Player #{ this.props.playerNum }</h3>
@@ -88,50 +86,60 @@ class PlayerSubmissionForm extends Component {
             <span>The</span>
 
             <input
-              onChange={this.onFieldChange}
               name="adj1"
               value={this.state.adj1}
               placeholder="adjective"
               type="text" 
-              className={adj1Valid ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
+              onChange={this.onFieldChange}
+              className={this.validate("adj1") ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
               />
             
             <input
-              onChange={this.onFieldChange}
               name="noun1"
               value={this.state.noun1}
               placeholder="noun"
-              type="text" />
+              type="text"
+              onChange={this.onFieldChange}
+              className={this.validate("noun1") ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
+              />
 
             <input
-              onChange={this.onFieldChange}
               name="adverb"
               value={this.state.adverb}
               placeholder="adverb"
-              type="text" />
+              type="text" 
+              onChange={this.onFieldChange}
+              className={this.validate("adverb") ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
+              />
             
             <input
-              onChange={this.onFieldChange}
               name="verb"
               value={this.state.verb}
               placeholder="verb"
-              type="text" />
+              type="text" 
+              onChange={this.onFieldChange}
+              className={this.validate("verb") ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
+              />
 
             <span>the</span>
 
             <input
-              onChange={this.onFieldChange}
               name="adj2"
               value={this.state.adj2}
               placeholder="adjective"
-              type="text" />
+              type="text"
+              onChange={this.onFieldChange}
+              className={this.validate("adj2") ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
+              />
 
             <input
-              onChange={this.onFieldChange}
               name="noun2"
               value={this.state.noun2}
               placeholder="noun"
-              type="text" />
+              type="text"
+              onChange={this.onFieldChange}
+              className={this.validate("noun2") ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
+              />
 
             <span>.</span>
 

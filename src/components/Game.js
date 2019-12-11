@@ -16,7 +16,7 @@ class Game extends Component {
   }
 
   addLine = ({adj1, noun1, adverb, verb, adj2, noun2}) => {
-    let sentence = `The ${adj1} ${noun1} ${adverb} ${verb} the ${adj2} ${noun2}.`
+    let sentence = `The ${adj1} ${noun1} ${adverb} ${verb} the ${adj2} ${noun2} .`
 
     const game = this.state
 
@@ -36,6 +36,14 @@ class Game extends Component {
       }
     }).join(" ");
 
+    let index = (this.state.playerNum - 2)
+
+    let lastLine = this.state.lineList
+
+
+    console.log(lastLine[index])
+
+
     return (
       <div className="Game">
         <h2>Game</h2>
@@ -48,7 +56,11 @@ class Game extends Component {
           { exampleFormat }
         </p>
 
-        <RecentSubmission />
+        { this.state.playerNum > 1 ? <RecentSubmission lastPlayer={lastLine[index]} /> : ""}
+
+
+
+        {/* <RecentSubmission /> */}
 
         <PlayerSubmissionForm playerNum={this.state.playerNum} addLineCallback={this.addLine}/>
 
