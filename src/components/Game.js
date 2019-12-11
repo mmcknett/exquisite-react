@@ -55,11 +55,11 @@ class Game extends Component {
           { exampleFormat }
         </p>
 
-        { this.state.playerNum > 1  && !this.state.isSubmitted ? <RecentSubmission lastPlayer={lastLine[index]} /> : ""}
+        { this.state.playerNum > 1  && !this.state.isSubmitted ? <RecentSubmission lastPlayer={ lastLine[index] } /> : ""}
 
-        { this.state.isSubmitted ? "" : <PlayerSubmissionForm playerNum={this.state.playerNum} addLineCallback={this.addLine}/>}
+        { this.state.isSubmitted ? "" : <PlayerSubmissionForm fields={ FIELDS } playerNum={ this.state.playerNum } addLineCallback={ this.addLine }/>}
         
-        <FinalPoem lines={this.state.lineList} submitPoemCallback={this.submitPoemCallback} submitted={this.state.isSubmitted} />
+        <FinalPoem lines={ this.state.lineList } submitPoemCallback={ this.submitPoemCallback } submitted={ this.state.isSubmitted } />
       </div>
     );
   }
