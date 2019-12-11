@@ -15,8 +15,8 @@ class Game extends Component {
     };
   }
 
-  addLine = (line) => {
-    let sentence = `The ${line.adjective} ${line.noun} ${line.adverb} ${line.verb} the ${line.adjective2} ${line.noun2}.`
+  addLine = ({adjective, noun, adverb, verb, adjective2, noun2}) => {
+    let sentence = `The ${adjective} ${noun} ${adverb} ${verb} the ${adjective2} ${noun2}.`
 
     const lines = this.state
 
@@ -25,7 +25,6 @@ class Game extends Component {
     this.setState({lines})
 
     console.log(this.state.lineList)
-
   }
 
   render() {
