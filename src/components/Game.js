@@ -12,6 +12,7 @@ class Game extends Component {
     this.state = {
       lineList: [],
       playerNum: 1,
+      isSubmitted: false,
     };
   }
 
@@ -25,6 +26,12 @@ class Game extends Component {
 
     this.setState({game})
   }
+
+  submitPoem = () => {
+    this.setState({isSubmitted: true})
+    console.log(this.state.isSubmitted)
+  }
+
 
   render() {
 
@@ -40,10 +47,6 @@ class Game extends Component {
 
     let lastLine = this.state.lineList
 
-
-    console.log(lastLine[index])
-
-
     return (
       <div className="Game">
         <h2>Game</h2>
@@ -58,13 +61,9 @@ class Game extends Component {
 
         { this.state.playerNum > 1 ? <RecentSubmission lastPlayer={lastLine[index]} /> : ""}
 
-
-
-        {/* <RecentSubmission /> */}
-
         <PlayerSubmissionForm playerNum={this.state.playerNum} addLineCallback={this.addLine}/>
 
-        <FinalPoem lines={this.state.lineList}/>
+        <FinalPoem submitPoem={this.submitPoem} lines={this.state.lineList}/>
 
       </div>
     );

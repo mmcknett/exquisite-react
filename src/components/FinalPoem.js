@@ -5,6 +5,10 @@ import './FinalPoem.css';
 const FinalPoem = (props) => {
   const lines = props.lines
 
+  const onsubmitPoem = () => {
+    props.submitPoem()
+  }
+
   const lineCollection = lines.map((line, i) => {  
     return (
       <p key={i}>
@@ -21,7 +25,7 @@ const FinalPoem = (props) => {
       </section>
 
       <div className="FinalPoem__reveal-btn-container">
-        <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" />
+        <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" onClick={ onsubmitPoem }/>
       </div>
     </div>
   );
@@ -29,6 +33,7 @@ const FinalPoem = (props) => {
 
 FinalPoem.propTypes = {
   lines: PropTypes.array,
+  submitPoem: PropTypes.func.isRequired,
 };
 
 export default FinalPoem;
