@@ -40,6 +40,35 @@ class PlayerSubmissionForm extends Component {
     this.setState(updatedState);
   }
 
+  makeFields () {
+    const allFields = []
+
+    this.props.fields.forEach(field => {
+      console.log(field)
+
+      if(field.key){
+        allFields.push(<span>{field.key}</span>)
+      } else {
+        allFields.push(<span>{field}</span>)
+      }
+
+
+    });
+    return allFields
+  }
+      
+      
+
+    
+    
+
+
+
+
+
+
+
+
   onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -83,9 +112,14 @@ class PlayerSubmissionForm extends Component {
         <form className="PlayerSubmissionForm__form" >
           <div className="PlayerSubmissionForm__poem-inputs">
 
-            <span>The</span>
+            { this.makeFields() }
 
-            <input
+
+
+
+            {/* <span>The</span> */}
+
+            {/* <input
               name="adj1"
               value={this.state.adj1}
               placeholder="adjective"
@@ -141,7 +175,7 @@ class PlayerSubmissionForm extends Component {
               className={this.validate("noun2") ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
               />
 
-            <span>.</span>
+            <span>.</span> */}
 
           </div>
 
