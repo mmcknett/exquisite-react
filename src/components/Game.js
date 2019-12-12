@@ -20,10 +20,10 @@ class Game extends Component {
 
     const game = this.state
 
-    game.lineList.push(sentence)
-    game.playerNum += 1
+    const lineList = [ ...game.lineList, sentence ];
+    const playerNum = game.playerNum + 1;
 
-    this.setState({game})
+    this.setState({ lineList, playerNum })
   }
 
   submitPoemCallback = () => {
