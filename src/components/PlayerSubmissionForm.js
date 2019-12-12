@@ -44,31 +44,29 @@ class PlayerSubmissionForm extends Component {
     const allFields = []
 
     this.props.fields.forEach(field => {
-      console.log(field)
 
       if(field.key){
-        allFields.push(<span>{field.key}</span>)
+
+        allFields.push(<input name={field.key} value={this.state[field.key]} placeholder={field.placeholder} type="text" onChange={this.onFieldChange} />)
+
+            // <input
+            //   name="adj1"
+            //   value={this.state.adj1}
+            //   placeholder="adjective"
+            //   type="text" 
+            //   onChange={this.onFieldChange}
+            //   className={this.validate("adj1") ? "PlayerSubmissionForm__input" : "PlayerSubmissionForm__input--invalid"}
+            //   />
+
       } else {
         allFields.push(<span>{field}</span>)
+        
       }
-
 
     });
     return allFields
   }
       
-      
-
-    
-    
-
-
-
-
-
-
-
-
   onFormSubmit = (event) => {
     event.preventDefault();
 
