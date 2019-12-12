@@ -10,7 +10,7 @@ class PlayerSubmissionForm extends Component {
     this.state = {
       adj1: "",
       noun1: "",
-      adverb: "",
+      adv: "",
       verb: "",
       adj2: "",
       noun2: "",
@@ -85,7 +85,7 @@ class PlayerSubmissionForm extends Component {
     const newLine = {
       adj1: this.state.adj1,
       noun1: this.state.noun1,
-      adverb: this.state.adverb,
+      adv: this.state.adv,
       verb: this.state.verb,
       adj2: this.state.adj2,
       noun2: this.state.noun2
@@ -94,7 +94,7 @@ class PlayerSubmissionForm extends Component {
     this.setState({
       adj1: "",
       noun1: "",
-      adverb: "",
+      adv: "",
       verb: "",
       adj2: "",
       noun2: "",
@@ -105,9 +105,9 @@ class PlayerSubmissionForm extends Component {
 
   render() {
     return (
-      <div className="PlayerSubmissionForm" onSubmit={this.onFormSubmit}>
+      <div className="PlayerSubmissionForm">
         <h3>Player Submission Form for Player #{ this.props.playerNum }</h3>
-        <form className="PlayerSubmissionForm__form" >
+        <form className="PlayerSubmissionForm__form" onSubmit={this.onFormSubmit}>
           <div className="PlayerSubmissionForm__poem-inputs">
 
             { this.makeFields() }

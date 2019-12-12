@@ -15,8 +15,8 @@ class Game extends Component {
     };
   }
 
-  addLine = ({ adj1, noun1, adverb, verb, adj2, noun2 }) => {
-    let sentence = `The ${adj1} ${noun1} ${adverb} ${verb} the ${adj2} ${noun2} .`
+  addLine = ({ adj1, noun1, adv, verb, adj2, noun2 }) => {
+    let sentence = `The ${adj1} ${noun1} ${adv} ${verb} the ${adj2} ${noun2}.`
 
     const game = this.state
 
