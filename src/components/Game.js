@@ -81,7 +81,7 @@ const Game = () => {
 }
 
 
-const FIELDS = [
+export const FIELDS = [
   'The',
   {
     key: 'adj1',

@@ -62,6 +62,7 @@ const PlayerSubmissionForm = (props) => {
             placeholder="adjective"
             type="text" 
             name='adj1'
+            data-testid='adj1'
             value={fields.adj1}
             onChange={onInputChange}
             className={validateInput(fields.adj1) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
@@ -70,6 +71,7 @@ const PlayerSubmissionForm = (props) => {
             placeholder='noun'
             type='text'
             name='noun1'
+            data-testid='noun1'
             value={fields.noun1}
             onChange={onInputChange}
             className={validateInput(fields.noun1) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
@@ -78,6 +80,7 @@ const PlayerSubmissionForm = (props) => {
             placeholder='adverb'
             type='text'
             name='adv'
+            data-testid='adv'
             value={fields.adv}
             onChange={onInputChange}
             className={validateInput(fields.adv) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
@@ -86,6 +89,7 @@ const PlayerSubmissionForm = (props) => {
             placeholder='verb'
             type='text'
             name='verb'
+            data-testid='verb'
             value={fields.verb}
             onChange={onInputChange}
             className={validateInput(fields.verb) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
@@ -95,6 +99,7 @@ const PlayerSubmissionForm = (props) => {
             placeholder='adjective'
             type='text'
             name='adj2'
+            data-testid='adj2'
             value={fields.adj2}
             onChange={onInputChange}
             className={validateInput(fields.adj2) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
@@ -103,6 +108,7 @@ const PlayerSubmissionForm = (props) => {
             placeholder='noun'
             type='text'
             name='noun2'
+            data-testid='noun2'
             value={fields.noun2}
             onChange={onInputChange}
             className={validateInput(fields.noun2) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
