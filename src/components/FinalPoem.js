@@ -11,7 +11,7 @@ const FinalPoem = (props) => {
   }
 
   const lines = props.submissions.map(line => 
-    <li className="FinalPoem__poem--listitems">{line}</li>
+    <li key={line} className="FinalPoem__poem--listitems">{line}</li>
   )
 
   const hideRevealPoemBtn = () => {

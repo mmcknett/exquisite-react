@@ -14,7 +14,6 @@ const PlayerSubmissionForm = (props) => {
   });
 
   const onInputChange = (event) => {
-    debugger;
     const {name, value} = event.target
 
     const newFields = {

@@ -53,8 +53,6 @@ const Game = () => {
   // need to figure out the logic of this 
   // result is an object 
   const sendSubmission = (results) => {
-    console.log(results)
-
     // const newFields = [...fields]
 
     const newFields = fields.map((field) => {
@@ -115,11 +113,13 @@ const Game = () => {
         <FinalPoem isSubmitted={isSubmitted} submissions={poems} revealPoem={revealPoem} /> 
       )
     } else {
-      return ([
-      <RecentSubmission submission={poems[poems.length - 1]} />,
-      <PlayerSubmissionForm index={index} sendSubmission={sendSubmission} fields={fields}/>,
-      <FinalPoem isSubmitted={isSubmitted} submissions={poems} revealPoem={revealPoem} /> 
-    ])}
+      return (
+        <>
+          <RecentSubmission submission={poems[poems.length - 1]} />
+          <PlayerSubmissionForm index={index} sendSubmission={sendSubmission} fields={fields}/>
+          <FinalPoem isSubmitted={isSubmitted} submissions={poems} revealPoem={revealPoem} />
+        </>
+    )}
   }
 
 
