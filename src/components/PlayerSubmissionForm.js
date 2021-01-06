@@ -5,12 +5,12 @@ import './PlayerSubmissionForm.css';
 
 const PlayerSubmissionForm = (props) => {
   const [fields, setFields] = useState({
-    'adj1': '',
-    'noun1': '',
-    'adv': '',
-    'verb': '',
-    'adj2': '',
-    'noun2': ''
+    adj1: '',
+    noun1: '',
+    adv: '',
+    verb: '',
+    adj2: '',
+    noun2: ''
   });
 
   const onInputChange = (event) => {
@@ -33,12 +33,12 @@ const PlayerSubmissionForm = (props) => {
    
     // // clear the text fields 
     setFields({
-      'adj1': '',
-      'noun1': '',
-      'adv': '',
-      'verb': '',
-      'adj2': '',
-      'noun2': ''
+      adj1: '',
+      noun1: '',
+      adv: '',
+      verb: '',
+      adj2: '',
+      noun2: ''
     })
   }
 
