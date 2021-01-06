@@ -59,7 +59,7 @@ const PlayerSubmissionForm = (props) => {
           }
           <p>The</p>
           <input
-            placeholder="adjective1"
+            placeholder="adjective"
             type="text" 
             name='adj1'
             value={fields.adj1}
@@ -67,7 +67,7 @@ const PlayerSubmissionForm = (props) => {
             className={validateInput(fields.adj1) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
           />
           <input
-            placeholder='noun1'
+            placeholder='noun'
             type='text'
             name='noun1'
             value={fields.noun1}
@@ -75,7 +75,7 @@ const PlayerSubmissionForm = (props) => {
             className={validateInput(fields.noun1) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
           />
           <input 
-            placeholder='adverb1'
+            placeholder='adverb'
             type='text'
             name='adv'
             value={fields.adv}
@@ -83,7 +83,7 @@ const PlayerSubmissionForm = (props) => {
             className={validateInput(fields.adv) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
           />
           <input 
-            placeholder='verb1'
+            placeholder='verb'
             type='text'
             name='verb'
             value={fields.verb}
@@ -92,7 +92,7 @@ const PlayerSubmissionForm = (props) => {
           />
           <p>the</p>
           <input 
-            placeholder='adjective2'
+            placeholder='adjective'
             type='text'
             name='adj2'
             value={fields.adj2}
@@ -100,7 +100,7 @@ const PlayerSubmissionForm = (props) => {
             className={validateInput(fields.adj2) ? 'PlayerSubmissionFormt__input--valid' : 'PlayerSubmissionFormt__input--invalid' }
           />
           <input 
-            placeholder='noun2'
+            placeholder='noun'
             type='text'
             name='noun2'
             value={fields.noun2}
